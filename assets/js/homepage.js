@@ -44,15 +44,15 @@ if (username) {
 userFormEl.addEventListener("submit", formSubmitHandler);
 
 var displayRepos = function(repos, searchTerm) {
-    console.log(repos);
-    repoContainerEl.textContent = "";
-    repoSearchTerm.textContent = searchTerm;
 
-    // check if api returned any repos
+      // check if api returned any repos
 if (repos.length === 0) {
     repoContainerEl.textContent = "No repositories found.";
     return;
   }
+    console.log(repos);
+    repoContainerEl.textContent = "";
+    repoSearchTerm.textContent = searchTerm;
 
  {// loop over repos
 for (var i = 0; i < repos.length; i++) {
@@ -88,6 +88,9 @@ if (repos[i].open_issues_count > 0) {
 
 // append to container
 repoEl.appendChild(statusEl);
+
+   // append container to the dom
+   repoContainerEl.appendChild(repoEl);
 
   }}
 
